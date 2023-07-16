@@ -1,0 +1,104 @@
+ ::-webkit-scrollbar {
+    width: 0; 
+    /* background: transparent;  Optional: just make scrollbar invisible */
+}
+#homeee{
+    position: fixed;
+    width: 100%;
+    opacity :1
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+    /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
+    /* font-family: 'open sans' */
+    /* background-color: rgb(43, 41, 41); */
+ }
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(43, 41, 41);
+    color: white;
+}
+.grid .container{
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+.main .about{
+    height: 50vh;
+    width: 100vw;
+    background-color: #1f1d1e;
+    /* display: grid; */
+    /* gap: 2px; */
+    /* box-sizing: border-box; */
+    justify-content: center;
+    align-items: center;
+} 
+.main .about h2{
+    color: rgb(243, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    
+    
+}
+.main .content{
+    color: white;
+    display: flex; 
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding-left: 100px;
+    padding-right: 5vh;
+}
+.main .form-group{
+    /* max-width: 500px; */
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: large;
+    padding-top: 10px;
+} 
+@media screen and (max-width = 992) {
+    /* … */
+    .main.form-group{
+        display: grid;
+        gap: 2px;
+    }
+  }
+  
+ .main .form-group input{
+    max-width: 30rem;
+}
+
+.submission{
+    padding-top: 60px;
+    padding-left: 40%;
+    padding-right: 20px;
+    font-size: large;
+    
+}
+/* .container textarea{
+    background-color: #a8a2a8;
+} */
+h1{
+    padding-top: 80px;
+    
+    
+}
+h1 a{
+    text-decoration: none;
+    color: white;
+}
+h1 a:hover{
+    text-decoration: none;
+    color: rgb(121, 121, 111);
+}
+
+ 

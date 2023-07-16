@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>CSS</title>
+</head>
+<body>
+  <div class="main">
+    <div id="homeee">
+  <nav class="navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Delhi Metro</a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> -->
+          
+            <div class="nav">
+              <a class="nav-link active" aria-current="page" href="#homeee"> </a>
+              <a class="nav-link" href="#">GO TO TOP</a>
+              <a class="nav-link" href="#"> </a>
+              <!-- <a class="nav-link disabled">Disabled</a> -->
+            </div>
+           </div> 
+        <!-- </div> -->
+      
+  </nav>
+</div>
+      <form class = "grid" action="/equ" method="POST">
+        
+        <div class="container">
+          <div class="form-group">
+              <label for="usr">Max_Token available in counter or machine before refreshing:</label>
+              <input type="text" class="form-control" id="usr arg0" name="arg0" value="300">
+          </div>
+          <div class="form-group">
+              <label for="usr">Refresh Rate:</label>
+              <input type="text" name="arg1" class="form-control" id="usr arg1" value ="30">
+          </div>
+          <div class="form-group">
+              <label for="usr">Average Number of People Arriving:</label>
+              <input type="text" class="form-control" id="usr arg2" name="arg2" value="210">
+          </div>
+          <div class="form-group">
+              <label for="usr">Metro_Per_Hour</label>
+              <input type="text" name="arg3" class="form-control" id="usr arg3" value="10">
+          </div>
+          <div class="form-group">
+              <label for="usr">Probability that the person use smart card not token:</label>
+              <input type="text" name="arg4" class="form-control" id="usr arg4" value="0.7">
+          </div>
+        </div>
+        <div class="submission">
+          <input type="Submit" class="btn btn-primary file_submit"></input>
+          <input formaction= "/equ2" type="Submit" class="btn btn-primary" value="Capacity Change "></input> 
+        </div>
+        <!-- <h6 class="text-center"><a href="description.html"> Click to view parameters description</a></h6> -->
+        <div class="container">
+          <!-- yaha par output dikehga -->
+            <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" readonly>
+              {% if name %}{{name}}
+              {% endif %}
+
+            </textarea>
+        </div  
+          
+      </form> 
+
+     <h1 class="text-center"><a href="index.html"> Delhi Metro</a></h1>
+     <h6 class="text-center"> Below is the description of all the variable used</h6>
+      <div class=" container">
+          <dl class="row">
+              <dt class="col-sm-3">Max_Token in Counter + Machine combined</dt>
+              <dd class="col-sm-9">Limits the number of tokens available for passengers.</dd>
+              <dt class="col-sm-3">Prob_Card</dt>
+              <dd class="col-sm-9">Probability of passengers using cards instead of tokens.</dd>
+              <dt class="col-sm-3">metro_capacity  </dt>
+              <dd class="col-sm-9">Maximum passenger capacity of a metro train.</dd>
+              <dt class="col-sm-3">metro_per_hour  </dt>
+              <dd class="col-sm-9">Number of metro trains arriving per hour.</dd>
+              <dt class="col-sm-3">refresh  </dt>
+              <dd class="col-sm-9">Time interval to refill tokens in machines.</dd>
+              <dt class="col-sm-3">arrival_rate  </dt>
+              <dd class="col-sm-9">Rate at which people arrive at the metro station.</dd>
+              <dt class="col-sm-3">tokens_available  </dt>
+              <dd class="col-sm-9">Current number of available tokens in the system.</dd>
+              <dt class="col-sm-3">hours </dt>
+              <dd class="col-sm-9">Duration for which the metro system is simulated.</dd>
+              <dt class="col-sm-3">time </dt>
+              <dd class="col-sm-9">Keeps track of the current time in the simulation.</dd>
+              <dt class="col-sm-3">num_train_in_x_hours </dt>
+              <dd class="col-sm-9">Number of trains arriving in a specific time period.</dd>
+              <dt class="col-sm-3">waitt </dt>
+              <dd class="col-sm-9">Calculates the number of people waiting for the next train.</dd>              
+            </dl>
+      </div>
+      <div class="about">
+        <h2 class="text-center">About</h2>
+        <div class="content">
+          <p>This project simulate delhi metro system and then output the average number of people waiting for next train. The algorithm is devised so that the variables value can be changed which is taken as input from user and then observing output these input are to be optimised. For example number of tokens available must be optimised. It must not be much less as it can increase 
+            waiting queue and should not be more than required also.</p>
+        </div>
+      </div>
+
+    <!-- <nav class="fixed-bottom navbar navbar-dark bg-dark">
+       Navbar content
+    <-- </nav> --> 
+  </div>
+  
+</body>
+
+
+</html>
